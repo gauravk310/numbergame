@@ -19,6 +19,24 @@ import {
 } from "lucide-react";
 import { sound } from "@/utils/sound";
 
+function InstagramIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 const RANGE_OPTIONS = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 type GameStatus = "idle" | "playing" | "won";
@@ -314,6 +332,20 @@ export default function OrderlyGame() {
 
           {/* Right navbar controls */}
           <div className="flex items-center gap-2">
+            {/* Instagram Badge */}
+            <a
+              href="https://instagram.com/seven.dev_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-pill hover:bg-white/10 hover:border-white/20 active:scale-95 text-[#edebe6] transition-all border border-white/10 group shadow-sm"
+              title="Follow @seven.dev_ on Instagram"
+            >
+              <InstagramIcon className="w-3.5 h-3.5 text-[#edebe6] group-hover:text-[#e08b68] transition-colors" />
+              <span className="font-sans text-[11px] sm:text-xs font-medium tracking-tight">
+                @seven.dev_
+              </span>
+            </a>
+
             <button
               type="button"
               onClick={() => setShowHowToPlay(true)}
